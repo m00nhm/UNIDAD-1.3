@@ -1,0 +1,25 @@
+import time
+def reloj_simulado():
+    # Hora inicial
+    hora = 0
+    minuto = 0
+    while True:
+        # Formatear la hora para mostrarla en formato 24 horas
+        print(f"{hora:02d}:{minuto:02d}")
+        
+        # Pausar un segundo antes de actualizar (puedes cambiar a 0.1 para acelerar)
+        time.sleep(1)
+        
+        # Incrementar el minuto
+        minuto += 1
+        
+        # Si los minutos llegan a 60, reiniciar minutos y aumentar la hora
+        if minuto == 60:
+            minuto = 0
+            hora += 1
+        
+        # Si las horas llegan a 24, reiniciar a 00
+        if hora == 24:
+            hora = 0
+# Ejecutar el reloj
+reloj_simulado()
